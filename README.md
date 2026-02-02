@@ -2,7 +2,7 @@
 
 [中文](README_zh.md) | English
 
-Lightweight AI instructions for GoFrame (GF) framework development. Optimized with reference to [ai-context](https://github.com/zeromicro/ai-context) and integrated with [gf-skills](https://github.com/zhanghoufu/gf-skills).
+Lightweight AI instructions for GoFrame (GF) framework development. 
 
 ## Overview
 

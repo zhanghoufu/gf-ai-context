@@ -2,8 +2,7 @@
 
 中文 | [English](README.md)
 
-GoFrame (GF) 框架开发的轻量级 AI 指令。参考 [ai-context](https://github.com/zeromicro/ai-context) 并结合 [gf-skills](https://github.com/zhanghoufu/gf-skills) 做了优化。
-
+GoFrame (GF) 框架开发的轻量级 AI 指令
 ## 概述
 
 `gf-ai-context` 为 AI 编码助手提供简洁的高优先级指令，被设计为加载到 AI 的上下文窗口中，指导任务路由和代码生成。
