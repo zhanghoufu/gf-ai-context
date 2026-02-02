@@ -124,3 +124,15 @@ gf build -n my-app -v 1.0.0
 # Build Docker image
 gf docker
 ```
+
+## Decision Matrix
+
+| 用户请求 | 对应工作流 |
+|----------|------------|
+| 新建项目 | 1（初始化） |
+| 新增 API 接口 | 2（新 API） |
+| 新增/修改数据库表 | 3（数据库驱动开发） |
+| 新建 gRPC 微服务 | 4（gRPC Monorepo） |
+| 为实体做完整 CRUD | 5（实体 CRUD） |
+| 修改 logic / api / 数据库 | 6（代码变更后） |
+| 打包或部署 | 7（生产构建） |
