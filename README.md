@@ -44,6 +44,116 @@ Lightweight AI instructions for GoFrame (GF) framework development.
 | `tools.md` | MCP tools and gf-cli commands, tool sequences |
 | `patterns.md` | Quick code patterns (API, Controller, Logic, Config, DAO) |
 
+## One-Prompt Setup
+
+Tell your AI assistant:
+
+```
+Set up GoFrame AI tools for this project from https://github.com/zhanghoufu/gf-ai-context
+```
+
+The AI can then:
+1. Detect your AI tool (Claude Code, Cursor, Copilot, Windsurf)
+2. Install the matching configuration
+3. Wire in gf-skills for detailed patterns
+4. Configure gf-mcp (if using an environment that supports MCP)
+
+## Manual Setup
+
+If you prefer to install by hand, pick your AI tool below.
+
+### Claude Code (Recommended)
+
+```bash
+# Install gf-ai-context (workflow instructions)
+git submodule add https://github.com/zhanghoufu/gf-ai-context.git .claude/gf-ai-context
+
+# Install gf-skills (knowledge base)
+git submodule add https://github.com/zhanghoufu/gf-skills.git .claude/skills/gf-skills
+
+# Install gf-mcp (code generation tools) — optional, in your home dir
+git clone https://github.com/zhanghoufu/gf-mcp.git ~/.gf-mcp
+cd ~/.gf-mcp && go build -o gf-mcp .
+
+# Register gf-mcp in Claude Code (optional)
+claude mcp add gf-mcp --transport stdio -- ~/.gf-mcp/gf-mcp
+```
+
+Ensure `gf` (GoFrame CLI) is on your `PATH` so gf-mcp can run it.
+
+### Cursor
+
+```bash
+# Add gf-ai-context as rules directory (Cursor reads all .md files in it)
+git submodule add https://github.com/zhanghoufu/gf-ai-context.git .cursorrules
+
+# Optional: add gf-skills for reference
+git submodule add https://github.com/zhanghoufu/gf-skills.git .cursorrules/gf-skills
+```
+
+### GitHub Copilot
+
+```bash
+# Add gf-ai-context
+git submodule add https://github.com/zhanghoufu/gf-ai-context.git .github/gf-ai-context
+
+# Point Copilot at the main instructions
+ln -s gf-ai-context/00-instructions.md .github/copilot-instructions.md
+
+# Optional: add gf-skills for reference
+git submodule add https://github.com/zhanghoufu/gf-skills.git .github/gf-skills
+```
+
+### Windsurf
+
+```bash
+# Add gf-ai-context as rules directory
+git submodule add https://github.com/zhanghoufu/gf-ai-context.git .windsurfrules
+
+# Optional: add gf-skills for reference
+git submodule add https://github.com/zhanghoufu/gf-skills.git .windsurfrules/gf-skills
+```
+
+## After Setup
+
+Once installed, your AI assistant can:
+
+**Generate services:**
+```
+Create a user management API with CRUD and gf gen dao/ctrl/service
+```
+
+**Apply patterns:**
+```
+Add request validation with v tags and gerror in my logic layer
+```
+
+**Troubleshoot:**
+```
+Why does gf gen service not see my new logic method?
+```
+
+**Review practices:**
+```
+Check my controller for GoFrame anti-patterns (business logic in controller)
+```
+
+## Updating
+
+Keep gf-ai-context and gf-skills up to date:
+
+```bash
+# Update all submodules
+git submodule update --remote --recursive
+
+# Or update by path
+git submodule update --remote .claude/gf-ai-context
+git submodule update --remote .claude/skills/gf-skills
+git submodule update --remote .cursorrules
+git submodule update --remote .github/gf-ai-context
+git submodule update --remote .windsurfrules
+```
+
 ## Key Features
 
 - **CLI-First / MCP-First**: Prefer gf-mcp tools or gf-cli over manual coding
@@ -66,7 +176,7 @@ Lightweight AI instructions for GoFrame (GF) framework development.
 
 ## Usage
 
-Include the contents of `00-instructions.md` (and optionally `workflows.md`, `tools.md`, `patterns.md`) in your AI assistant's system prompt or reference them as rules files.
+If not using Manual Setup above: include `00-instructions.md` (and optionally `workflows.md`, `tools.md`, `patterns.md`) in your AI assistant’s system prompt or point your tool’s rules at this directory.
 
 ## Related Projects
 
