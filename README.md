@@ -1,5 +1,7 @@
 # gf-ai-context
 
+[中文](README_zh.md) | English
+
 Lightweight AI instructions for GoFrame (GF) framework development.
 
 ## Overview

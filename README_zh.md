@@ -1,5 +1,7 @@
 # gf-ai-context
 
+中文 | [English](README.md)
+
 GoFrame (GF) 框架开发的轻量级 AI 指令。
 
 ## 概述
